@@ -7,7 +7,7 @@ In this repo, you will find the essential files needed to deploy a fully operati
 * ```ha```: a fully HA OpenShift cluster with three control-plane nodes and 2+ worker nodes.
 
 Every topology comes with two variants:
-* ```connected```: the cluster can access the internet to pull the images;
+* ```connected```: the cluster will access the internet to pull the images;
 * ```disconnected```: the cluster will access a private registry to pull the images.
 
 To generate the ISO:
