@@ -6,6 +6,7 @@ metadata:
 rendezvousIP: 192.168.124.80 ### The address of the host where the Assisted Service will run
 hosts: 
   - hostname: master-0 
+    role: master
     interfaces:
       - name: enp1s0
         macAddress: 52:54:00:c1:54:95
