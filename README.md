@@ -12,7 +12,7 @@ Every topology comes with two variants:
 
 To generate the ISO:
 * go to the OpenShift flavor of choice: ```cd <topology>/<variant>```;
-* edit the manifest to match your environment;
+* edit the manifests to match your environment;
   * hint: make a backup copy of the manifests as they will be consumed in the next step!
 * generate the ISO using the command: ```openshift-install --dir . agent create image```;
 * boot the generated ISO on the server(s) that are part of the cluster.
