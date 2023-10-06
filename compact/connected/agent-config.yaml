@@ -6,6 +6,7 @@ metadata:
 rendezvousIP: 192.168.124.80
 hosts:
   - hostname: master-0
+    role: master
     interfaces:
      - name: enp1s0
        macAddress: 52:54:00:e7:05:72
@@ -32,6 +33,7 @@ hosts:
             next-hop-interface: enp1s0
             table-id: 254
   - hostname: master-1
+    role: master
     interfaces:
      - name: enp1s0
        macAddress: 52:54:00:95:fd:f3
@@ -58,6 +60,7 @@ hosts:
             next-hop-interface: enp1s0
             table-id: 254
   - hostname: master-2
+    role: master
     interfaces:
      - name: enp1s0
        macAddress: 52:54:00:e8:b9:18
