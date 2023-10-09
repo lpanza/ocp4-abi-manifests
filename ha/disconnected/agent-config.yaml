@@ -1,0 +1,182 @@
+---
+apiVersion: v1alpha1
+kind: AgentConfig
+metadata:
+  name: compact-cluster
+rendezvousIP: 192.168.124.80
+hosts:
+  - hostname: master-0
+    role: master
+    interfaces:
+     - name: enp1s0
+       macAddress: 52:54:00:e7:05:72
+    networkConfig:
+      interfaces:
+        - name: enp1s0
+          type: ethernet
+          state: up
+          mac-address: 52:54:00:e7:05:72
+          ipv4:
+            enabled: true
+            address:
+              - ip: 192.168.124.80
+                prefix-length: 24
+            dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.1.10
+      routes:
+        config:
+          - destination: 0.0.0.0/0 ### Adding a fake default route to simulate a disconnected environment. NOTE: the default route is ALWAYS required for ABI
+            next-hop-address: 1.2.3.4
+            next-hop-interface: enp1s0
+            table-id: 254
+          - destination: 192.168.1.10/32 ### Adding the route to reach the DNS
+            next-hop-address: 192.168.124.1
+            next-hop-interface: enp1s0
+            table-id: 254
+          - destination: 192.168.1.11/32 ### Adding the route to reach the mirrored Quay registry
+            next-hop-address: 192.168.124.1
+            next-hop-interface: enp1s0
+            table-id: 254
+  - hostname: master-1
+    role: master
+    interfaces:
+     - name: enp1s0
+       macAddress: 52:54:00:95:fd:f3
+    networkConfig:
+      interfaces:
+        - name: enp1s0
+          type: ethernet
+          state: up
+          mac-address: 52:54:00:95:fd:f3
+          ipv4:
+            enabled: true
+            address:
+              - ip: 192.168.124.81
+                prefix-length: 24
+            dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.1.10
+      routes:
+        config:
+          - destination: 0.0.0.0/0 ### Adding a fake default route to simulate a disconnected environment. NOTE: the default route is ALWAYS required for ABI
+            next-hop-address: 1.2.3.4
+            next-hop-interface: enp1s0
+            table-id: 254
+          - destination: 192.168.1.10/32 ### Adding the route to reach the DNS
+            next-hop-address: 192.168.124.1
+            next-hop-interface: enp1s0
+            table-id: 254
+          - destination: 192.168.1.11/32 ### Adding the route to reach the mirrored Quay registry
+            next-hop-address: 192.168.124.1
+            next-hop-interface: enp1s0
+            table-id: 254
+  - hostname: master-2
+    role: master
+    interfaces:
+     - name: enp1s0
+       macAddress: 52:54:00:e8:b9:18
+    networkConfig:
+      interfaces:
+        - name: enp1s0
+          type: ethernet
+          state: up
+          mac-address: 52:54:00:e8:b9:18
+          ipv4:
+            enabled: true
+            address:
+              - ip: 192.168.124.82
+                prefix-length: 24
+            dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.1.10
+      routes:
+        config:
+          - destination: 0.0.0.0/0 ### Adding a fake default route to simulate a disconnected environment. NOTE: the default route is ALWAYS required for ABI
+            next-hop-address: 1.2.3.4
+            next-hop-interface: enp1s0
+            table-id: 254
+          - destination: 192.168.1.10/32 ### Adding the route to reach the DNS
+            next-hop-address: 192.168.124.1
+            next-hop-interface: enp1s0
+            table-id: 254
+          - destination: 192.168.1.11/32 ### Adding the route to reach the mirrored Quay registry
+            next-hop-address: 192.168.124.1
+            next-hop-interface: enp1s0
+            table-id: 254
+  - hostname: worker-0
+    role: master
+    interfaces:
+     - name: enp1s0
+       macAddress: 52:54:00:a8:39:26
+    networkConfig:
+      interfaces:
+        - name: enp1s0
+          type: ethernet
+          state: up
+          mac-address: 52:54:00:a8:39:26
+          ipv4:
+            enabled: true
+            address:
+              - ip: 192.168.124.83
+                prefix-length: 24
+            dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.1.10
+      routes:
+        config:
+          - destination: 0.0.0.0/0 ### Adding a fake default route to simulate a disconnected environment. NOTE: the default route is ALWAYS required for ABI
+            next-hop-address: 1.2.3.4
+            next-hop-interface: enp1s0
+            table-id: 254
+          - destination: 192.168.1.10/32 ### Adding the route to reach the DNS
+            next-hop-address: 192.168.124.1
+            next-hop-interface: enp1s0
+            table-id: 254
+          - destination: 192.168.1.11/32 ### Adding the route to reach the mirrored Quay registry
+            next-hop-address: 192.168.124.1
+            next-hop-interface: enp1s0
+            table-id: 254
+  - hostname: worker-1
+    role: master
+    interfaces:
+     - name: enp1s0
+       macAddress: 52:54:00:c8:f3:09
+    networkConfig:
+      interfaces:
+        - name: enp1s0
+          type: ethernet
+          state: up
+          mac-address: 52:54:00:c8:f3:09
+          ipv4:
+            enabled: true
+            address:
+              - ip: 192.168.124.84
+                prefix-length: 24
+            dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.1.10
+      routes:
+        config:
+          - destination: 0.0.0.0/0 ### Adding a fake default route to simulate a disconnected environment. NOTE: the default route is ALWAYS required for ABI
+            next-hop-address: 1.2.3.4
+            next-hop-interface: enp1s0
+            table-id: 254
+          - destination: 192.168.1.10/32 ### Adding the route to reach the DNS
+            next-hop-address: 192.168.124.1
+            next-hop-interface: enp1s0
+            table-id: 254
+          - destination: 192.168.1.11/32 ### Adding the route to reach the mirrored Quay registry
+            next-hop-address: 192.168.124.1
+            next-hop-interface: enp1s0
+            table-id: 254
