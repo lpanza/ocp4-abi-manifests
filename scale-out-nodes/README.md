@@ -10,7 +10,8 @@ In order to scale out the number of worker nodes, you will need to:
 * Make the desired changes;
 * Install the gathered ignition file on the server;
 * Approve the required csrs on the cluster.
-
-[Adding worker nodes manually](https://docs.openshift.com/container-platform/latest/nodes/nodes/nodes-sno-worker-nodes.html#sno-adding-worker-nodes-to-single-node-clusters-manually_add-workers)
 <br>
-[Creating RHCOS machines using an ISO image](https://docs.openshift.com/container-platform/latest/machine_management/user_infra/adding-bare-metal-compute-user-infra.html#machine-user-infra-machines-iso_adding-bare-metal-compute-user-infra)
+
+Useful doc pages:
+* [Adding worker nodes manually](https://docs.openshift.com/container-platform/latest/nodes/nodes/nodes-sno-worker-nodes.html#sno-adding-worker-nodes-to-single-node-clusters-manually_add-workers)
+* [Creating RHCOS machines using an ISO image](https://docs.openshift.com/container-platform/latest/machine_management/user_infra/adding-bare-metal-compute-user-infra.html#machine-user-infra-machines-iso_adding-bare-metal-compute-user-infra)
