@@ -20,6 +20,7 @@ To generate the ISO:
 In addition, you will also find the ```scale-out-nodes``` directory, where you will find the instructions to add more worker nodes to your cluster.
 
 <br>
+
 Here are some useful resources:
 * [Agent-Based Installation docs](https://docs.openshift.com/container-platform/latest/installing/installing_with_agent_based_installer/preparing-to-install-with-agent-based-installer.html)
 * [About Disconnected installation](https://docs.openshift.com/container-platform/latest/installing/disconnected_install/index.html)
