@@ -1,0 +1,48 @@
+{
+  "ignition": {
+    "config": {
+      "merge": [
+        {
+          "source": "https://api-int.sno-cluster.test.example.com:22623/config/worker", ### The URL where the actual ignition file is exposed
+          "verification": {}
+        }
+      ],
+      "replace": {
+        "verification": {}
+      }
+    },
+    "proxy": {},
+    "security": {
+      "tls": {
+        "certificateAuthorities": [
+          {
+            "source": "data:text/plain;charset=utf-8;base64,<base64 encoded data of the CA>",
+            "verification": {}
+          }
+        ]
+      }
+    },
+    "timeouts": {},
+    "version": "3.2.0"
+  },
+  "storage": {
+    "files": [
+      {
+        "path": "/etc/hostname",
+        "mode": 420,
+        "overwrite": true,
+        "contents": { 
+          "source": "data:,<name of the worker node, such as worker-x>"
+        }
+      },
+      {
+        "path": "/etc/NetworkManager/system-connections/<dev-name>.nmconnection",
+        "mode": 600,
+        "overwrite": true,
+        "contents": { 
+          "source": "data:text/plain;charset=utf-8;base64,<base64-encoded string of the nmconnection's file contents>
+        }
+      }
+    ]
+  }
+}
